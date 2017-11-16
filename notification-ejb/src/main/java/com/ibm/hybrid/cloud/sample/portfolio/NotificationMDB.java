@@ -98,6 +98,12 @@ public class NotificationMDB implements MessageListener {
 			id = System.getenv("OW_ID");
 			pwd = System.getenv("OW_PASSWORD");
 			
+			System.out.println("OW_URL: " + url);
+			System.out.println("OW_ID: " + id);
+			System.out.println("OW_PASSWORD: " + pwd);
+			
+			
+			
 			System.out.println("NotificationMDB initialized");
 
 			if (url == null) {
@@ -134,6 +140,8 @@ public class NotificationMDB implements MessageListener {
 	private static JsonObject invokeREST(String verb, String uri, String input, String user, String password) throws IOException {
 		
 		System.out.println("NotificationMDB:invokeREST() method");
+		
+		System.out.println("verb: " + verb + " uri " + uri + " input " + input + " user " + user + " password " + password );
 		URL url = new URL(uri);
 
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
